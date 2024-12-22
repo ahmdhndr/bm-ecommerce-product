@@ -17,7 +17,7 @@ export function ProductCarousel() {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
-    <div className="flex flex-col gap-4 max-w-xs">
+    <div className="flex flex-col gap-4 max-w-md">
       <Carousel className="w-full max-w-xs" setApi={setApi}>
         <CarouselContent>
           {images.map((image, index) => (
@@ -27,7 +27,7 @@ export function ProductCarousel() {
                   <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden">
                     <img
                       src={image}
-                      alt={`Product image ${index + 1}`}
+                      alt={`Product ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </CardContent>
