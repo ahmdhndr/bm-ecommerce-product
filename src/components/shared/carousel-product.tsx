@@ -18,17 +18,17 @@ export function ProductCarousel() {
 
   return (
     <div className="flex flex-col gap-4 max-w-md">
-      <Carousel className="w-full max-w-xs" setApi={setApi}>
+      <Carousel className="w-full" setApi={setApi}>
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card>
+                <Card className='p-2 border-transparent shadow-none'>
                   <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden">
                     <img
                       src={image}
                       alt={`Product ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full block align-bottom"
                     />
                   </CardContent>
                 </Card>
@@ -48,7 +48,7 @@ export function ProductCarousel() {
             <img
               src={image}
               alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full block align-bottom"
             />
           </button>
         ))}

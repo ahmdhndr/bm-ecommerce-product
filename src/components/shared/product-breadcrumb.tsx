@@ -16,7 +16,7 @@ export function ProductBreadcrumb() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href='/products'>Components</BreadcrumbLink>
+          <BreadcrumbLink href='/products'>Products</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

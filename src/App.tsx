@@ -1,24 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { ProductBreadcrumb } from "@/components/shared/product-breadcrumb";
-import { ProductCarousel } from "@/components/shared/product-carousel";
+import { ProductCarousel } from "@/components/shared/carousel-product";
 import { Card } from "@/components/ui/card";
 import { ProductQuantityCounter } from "@/components/shared/product-quantity-counter";
 import { ShoppingCart as IconCart, Star as IconStar } from "lucide-react";
 
 export default function App() {
   return (
-    <div className="flex flex-col items-center py-10">
+    <div className="flex flex-col items-center p-4 md:px-0 w-full max-w-5xl m-auto">
       <header className="text-center p-2">
         <h1 className="text-2xl font-bold">Ecommerce Product</h1>
       </header>
 
-      <main className="space-y-10 w-full max-w-5xl">
+      <main className="space-y-3 md:space-y-10">
         <ProductBreadcrumb />
 
-        <section className="flex justify-between">
+        <section className="flex gap-3 justify-between flex-col md:flex-row">
           <ProductCarousel />
 
-          <aside className="space-y-6 w-96">
+          <aside className="space-y-6 w-full max-w-96 text-balance">
             <Card className="w-full border-none shadow-none space-y-3">
               <h1 className="text-2xl font-bold">MacBook Pro 14" (2023)</h1>
               <div className="flex items-center gap-3">

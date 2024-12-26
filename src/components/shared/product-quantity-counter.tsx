@@ -11,7 +11,7 @@ interface ProductQuantityCounterProps {
 export function ProductQuantityCounter({
   initialQuantity = 1,
   onQuantityChange,
-}: ProductQuantityCounterProps) {
+}: Readonly<ProductQuantityCounterProps>) {
   const [quantity, setQuantity] = useState(initialQuantity);
 
   const updateQuantity = (newQuantity: number) => {
@@ -42,33 +42,44 @@ export function ProductQuantityCounter({
     }
   };
 
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'ArrowUp') {
+      increment();
+    } else {
+      decrement();
+    }
+  }
+
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center justify-center space-x-2 border border-primary p-1 rounded-lg">
       <Button
         variant="ghost"
+        className={`${quantity > 1 && 'text-primary'} focus:text-primary focus-visible:text-primary focus-visible:border-none`}
         size="icon-sm"
         onClick={decrement}
         disabled={quantity <= 1}
         aria-label="Decrease quantity"
       >
-        <Minus className="h-4 w-4" />
+        <Minus className="size-2" />
       </Button>
       <Input
-        type="number"
+        type="text"
         value={quantity}
         onChange={handleInputChange}
         onBlur={handleBlur}
-        className="w-16 text-center"
+        onKeyDown={onKeyDown}
+        className="w-14 h-auto text-center border-transparent m-0 p-0 focus:border-transparent active:border-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
         min="1"
         aria-label="Product quantity"
       />
       <Button
         variant="ghost"
         size="icon-sm"
+        className='text-primary focus:text-primary focus-visible:text-primary focus-visible:border-none'
         onClick={increment}
         aria-label="Increase quantity"
       >
-        <Plus className="h-4 w-4" />
+        <Plus className="size-2" />
       </Button>
     </div>
   );
