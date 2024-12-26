@@ -7,7 +7,7 @@ import { ShoppingCart as IconCart, Star as IconStar } from "lucide-react";
 
 export default function App() {
   return (
-    <div className="flex flex-col p-4 w-full max-w-5xl m-auto">
+    <div className="flex flex-col p-4 xl:px-0 w-full max-w-5xl m-auto">
       <header className="text-center p-2">
         <h1 className="text-2xl font-bold">Ecommerce Product</h1>
       </header>
