@@ -23,7 +23,7 @@ export function ProductCarousel() {
           {images.map((image, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card className='p-2 border-transparent shadow-none'>
+                <Card className='border-transparent shadow-none'>
                   <CardContent className="flex aspect-square items-center justify-center p-0 overflow-hidden">
                     <img
                       src={image}
